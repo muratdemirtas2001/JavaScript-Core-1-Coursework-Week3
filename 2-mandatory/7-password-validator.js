@@ -25,8 +25,10 @@ PasswordValidationResult=  [false, false, false, false, true]
 */
 
 function validatePasswords(passwords) {
-  return passwords.map((password) => {
+  return passwords.map((password, index) => {
     return (
+      passwords.indexOf(password) === index &&
+      password.length > 5 &&
       containsUppercaseLetter(password) &&
       containsLowercaseLetter(password) &&
       containsNumber(password) &&
@@ -35,6 +37,13 @@ function validatePasswords(passwords) {
   });
 }
 
+//   function isDuplicated(password) {
+//     let counter = 0;
+//     passwords.forEach((element)=>{
+
+//     })
+
+//   }
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {
   return /[A-Z]/.test(string);
