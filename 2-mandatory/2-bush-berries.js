@@ -21,7 +21,12 @@
   Let's first look at an example that will teach you how to use these methods.
 */
 
-function bushChecker() {}
+function bushChecker(bushes) {
+  const isAllPink = bushes.every((bush) => {
+    return bush === "pink";
+  });
+  return isAllPink ? "Bush is safe to eat from" : "Toxic! Leave bush alone!";
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
