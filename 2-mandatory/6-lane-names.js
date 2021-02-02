@@ -6,7 +6,11 @@
   HINT: string and array methods that could be helpful (indexOf, filter)
 */
 
-function getLanes() {}
+function getLanes(streetArray) {
+  return streetArray.filter((streetName) => {
+    return streetName.includes("Lane");
+  });
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
