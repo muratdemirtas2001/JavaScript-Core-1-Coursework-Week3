@@ -2,7 +2,7 @@
 
 .substring() allows us to remove things from strings.
 
-To remove the start of a string you can start with 0. For example
+To remove the start of a tart with 0. For example
 
 ```js
 let dessert = "ice cream and pancakes";
