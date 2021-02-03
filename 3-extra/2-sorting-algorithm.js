@@ -13,8 +13,66 @@ Create a function called sortAges which:
 You don't have to worry about making this algorithm work fast! The idea is to get you to
 "think" like a computer and practice your knowledge of basic JavaScript.
 */
+//FILTER METHOD
+// function sortAges(arr) {
+//   const justNumbers = arr.filter((valueArray) => {
+//     return typeof valueArray === "number";
+//   });
+//   return justNumbers.sort(function (a, b) {
+//     return a - b;
+//   });
+// }
 
-function sortAges(arr) {}
+//FOREACH METHOD
+// function sortAges(arr) {
+//   const justNumbers = [];
+//   arr.forEach((valueArray) => {
+//     if (typeof valueArray === "number") {
+//       justNumbers.push(valueArray);
+//     }
+//   });
+//   return justNumbers.sort(function (a, b) {
+//     return a - b;
+//   });
+// }
+
+//FOR LOOP METHOD-WITH SORT()
+// function sortAges(arr) {
+//   const justNumbers = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     if (typeof arr[i] === "number") {
+//       justNumbers.push(arr[i]);
+//     }
+//   }
+//   return justNumbers.sort(function (a, b) {
+//     return a - b;
+//   });
+// }
+
+// FOR LOOP METHOD-WITHOUT USING SORT()
+function sortAges(arr) {
+  const justNumbers = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (typeof arr[i] === "number") {
+      justNumbers.push(arr[i]);
+    }
+  }
+  let done = false;
+  while (!done) {
+    done = true;
+    for (let i = 1; i < justNumbers.length; i++) {
+      if (justNumbers[i - 1] > justNumbers[i]) {
+        done = false;
+        var tmp = justNumbers[i - 1];
+        justNumbers[i - 1] = justNumbers[i];
+        justNumbers[i] = tmp;
+      }
+    }
+  }
+  return justNumbers;
+}
+
+// console.log(sortAges(agesCase2));
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
