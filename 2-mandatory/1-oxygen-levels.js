@@ -14,7 +14,6 @@
 function safeLevels(oxygenLevelArray) {
   return oxygenLevelArray.find((oxygenLevel) => {
     oxygenLevel = oxygenLevel.substring(0, oxygenLevel.length - 1);
-    console.log(oxygenLevel);
     return oxygenLevel > 19.5 && oxygenLevel < 23.5;
   });
 }
